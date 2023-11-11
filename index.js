@@ -174,7 +174,7 @@ window.onload = function() {
 
 
       // ${parent.get_name()}.
-      chat_input.placeholder = ` Wybierz pizze i rozmiar którą chcesz`
+      chat_input.placeholder = ` Wybierz pizze i rozmiar który chcesz`
       chat_input.onkeyup  = function(){
         if(chat_input.value.length > 0){
           chat_input_send.removeAttribute('disabled')
