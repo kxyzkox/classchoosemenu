@@ -3,14 +3,14 @@
 window.onload = function() {
   // Your web app's Firebase configuration
   const firebaseConfig = {
-    apiKey: "AIzaSyCmLxDM8KEU0fIRypRLPu9ZWLmJbg-vdzY",
-    authDomain: "class-c14b7.firebaseapp.com",
-    databaseURL: "https://class-c14b7-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "class-c14b7",
-    storageBucket: "class-c14b7.appspot.com",
-    messagingSenderId: "358425338966",
-    appId: "1:358425338966:web:f615d436ff976ce840c7f7",
-    measurementId: "G-NW4XKCG003"
+    apiKey: "AIzaSyC_fRgr4hWHrmrYslVW8gtr7D1_oZCzQpQ",
+    authDomain: "classserverinf.firebaseapp.com",
+    databaseURL: "https://classserverinf-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "classserverinf",
+    storageBucket: "classserverinf.appspot.com",
+    messagingSenderId: "430474318022",
+    appId: "1:430474318022:web:01db2a250c49c2293e87c7",
+    measurementId: "G-WXN6HYJD8N"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
@@ -41,7 +41,7 @@ window.onload = function() {
 
       var title = document.createElement('h1')
       title.setAttribute('id', 'title')
-      title.textContent = ''
+      title.textContent = 'KLASA ADMIN PANEL'
 
       title_inner_container.append(title)
       title_container.append(title_inner_container)
@@ -62,7 +62,7 @@ window.onload = function() {
 
       var join_button = document.createElement('button')
       join_button.setAttribute('id', 'join_button')
-      join_button.innerHTML = 'Wejdź do głosowania <i class="fas fa-sign-in-alt"></i>'
+      join_button.innerHTML = 'Dołącz <i class="fas fa-sign-in-alt"></i>'
 
       var join_input_container = document.createElement('div')
       join_input_container.setAttribute('id', 'join_input_container')
@@ -149,17 +149,11 @@ window.onload = function() {
       chat_input_send.setAttribute('disabled', true)
       chat_input_send.innerHTML = `➤`
 
-      
-
       document.addEventListener("keyup", function(event) {
         if (event.key === 'Enter') {
           document.getElementById("chat_input_send").click();
         }
-        
-
     });
-
-    
     
       //if (event.key === "Enter") {
       //  document.getElementById("chat_input_send").click();
@@ -170,11 +164,7 @@ window.onload = function() {
       // Only a max message length of 1000
       chat_input.setAttribute('maxlength', 1000)
       // Get the name of the user
-
-
-
-      // ${parent.get_name()}.
-      chat_input.placeholder = `Wybierz pizze i rozmiar który chcesz`
+      chat_input.placeholder = `${parent.get_name()}. Powiedz coś...`
       chat_input.onkeyup  = function(){
         if(chat_input.value.length > 0){
           chat_input_send.removeAttribute('disabled')
@@ -239,10 +229,10 @@ window.onload = function() {
       }
 
       // Get the firebase database value
-      db.ref('server1/').once('value', function(message_object) {
+      db.ref('server2/').once('value', function(message_object) {
         // This index is mortant. It will help organize the chat in order
         var index = parseFloat(message_object.numChildren()) + 1
-        db.ref('server1/' + `message_${index}`).set({
+        db.ref('server2/' + `message_${index}`).set({
           name: parent.get_name(),
           message: message,
           index: index
@@ -268,7 +258,7 @@ window.onload = function() {
       var chat_content_container = document.getElementById('chat_content_container')
 
       // Get the chats from firebase
-      db.ref('server1/').on('value', function(messages_object) {
+      db.ref('server2/').on('value', function(messages_object) {
         // When we get the data clear chat_content_container
         chat_content_container.innerHTML = ''
         // if there are no messages in the chat. Retrun . Don't load anything
