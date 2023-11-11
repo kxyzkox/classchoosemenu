@@ -1,2 +1,62 @@
-<iframe src="Untitled.png" style="height: 100%; width: 100%;">
-    <body style="background-color: #1f1f1f"></body>
+   
+<title>Klasa</title>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Varela Round' rel='stylesheet'/>
+<link rel="stylesheet" href="main.css"/>
+<style>
+
+.sidenav {
+height: 100%;
+width: 200px;
+position: fixed;
+z-index: 1;
+top: 0;
+left: 0;
+background-color: #111;
+overflow-x: hidden;
+padding-top: 20px;
+}
+
+.sidenav a {
+padding: 6px 8px 6px 16px;
+text-decoration: none;
+font-size: 25px;
+color: #818181;
+display: block;
+}
+
+.sidenav a:hover {
+color: #f1f1f1;
+}
+
+.main {
+margin-left: 160px; /* Same as the width of the sidenav */
+font-size: 28px; /* Increased text to enable scrolling */
+padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+.sidenav {padding-top: 15px;}
+.sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+<div style="font-family: Varela Round; " class="sidenav">
+<a href="index.html">Strona główna</a>
+<a href="admin.html">Admin Panel</a>
+<a href="azzuro.html">Menu Azzuro</a>
+<a href="#clients">Grupa klasowa</a>
+</div>
+
+<div class="main">
+    <iframe src="Untitled.png" style="height: 100%; width: 100%; margin-left: 20px;">
+        <body style="background-color: #1f1f1f"></body>
+</div>
+
+</body>
+</html> 
